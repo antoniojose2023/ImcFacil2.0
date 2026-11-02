@@ -2,7 +2,6 @@ package br.com.devmobileaj.imcfacil20.ui.telas
 
 import android.widget.Toast
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,7 +18,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -33,12 +31,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.devmobileaj.imcfacil20.R
-import br.com.devmobileaj.imcfacil20.domain.Imc
+import br.com.devmobileaj.imcfacil20.data.entity.Imc
+import br.com.devmobileaj.imcfacil20.data.repository.ImcRepository
 import br.com.devmobileaj.imcfacil20.ui.Screen
 import br.com.devmobileaj.imcfacil20.ui.components.Header
 import br.com.devmobileaj.imcfacil20.ui.theme.Green
 import br.com.devmobileaj.imcfacil20.ui.theme.Green_50
 import br.com.devmobileaj.imcfacil20.ui.theme.Green_90
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @Composable
 fun CalculoImc(navController: NavController){
@@ -46,6 +49,8 @@ fun CalculoImc(navController: NavController){
     val context = LocalContext.current
     var peso by remember { mutableStateOf("") }
     var altura by remember { mutableStateOf("") }
+
+    val imcRepository = ImcRepository(context)
 
     Column(
         modifier = Modifier.fillMaxSize()
@@ -115,9 +120,21 @@ fun CalculoImc(navController: NavController){
 
                       if(altura != null && peso != null){
                            val res = peso / (altura * altura)
-                           navController.navigate(Screen.RESULTADO + "/${res}")
-                           //val imc = Imc(res)
+                           val imc = Imc(0, res)
 
+                          CoroutineScope(Dispatchers.IO).launch {
+                               val id = imcRepository.salvar(imc)
+
+                              withContext(Dispatchers.Main){
+                                  if(id > 0){
+                                      Toast.makeText(context, "Registro salvo com sucesso", Toast.LENGTH_SHORT).show()
+                                      navController.navigate(Screen.RESULTADO + "/${res}")
+                                  }else{
+                                      Toast.makeText(context, "Erro ao salvar o registro", Toast.LENGTH_SHORT).show()
+                                  }
+                              }
+
+                          }
 
                       }else{
                           Toast.makeText(context, "Preencha os campos corretamente", Toast.LENGTH_SHORT).show()

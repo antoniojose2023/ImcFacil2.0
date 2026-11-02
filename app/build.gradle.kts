@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -60,4 +61,10 @@ dependencies {
     implementation(libs.icons.material.icons.rounded.android)
     implementation(libs.icons.material.icons.sharp.android)
     implementation(libs.icons.material.icons.twotone.android)
+
+    val roomVersion = "2.8.4"
+
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
 }

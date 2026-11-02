@@ -22,16 +22,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import br.com.devmobileaj.imcfacil20.domain.CalculoImc
+import br.com.devmobileaj.imcfacil20.domain.CalculoImcModel
 import br.com.devmobileaj.imcfacil20.ui.components.Header
 import br.com.devmobileaj.imcfacil20.ui.theme.Green_50
 
 @Composable
 fun ResultadoIMC(navController: NavController, imc: Double){
 
-    val imcFormatado = CalculoImc.configImc(imc = imc)
-    val classificacao = CalculoImc.classificarImc(imc = imc)
-    val classificacaoImcDica = CalculoImc.classificarImcDica( classificacao  )
+    val imcFormatado = CalculoImcModel.configImc(imc = imc)
+    val classificacao = CalculoImcModel.classificarImc(imc = imc)
+    val classificacaoImcDica = CalculoImcModel.classificarImcDica( classificacao  )
 
     Column(
         modifier = Modifier.fillMaxSize()

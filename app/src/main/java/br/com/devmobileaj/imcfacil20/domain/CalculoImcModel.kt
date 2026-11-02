@@ -1,9 +1,8 @@
 package br.com.devmobileaj.imcfacil20.domain
 
-import android.annotation.SuppressLint
 import java.util.Locale
 
-class CalculoImc {
+class CalculoImcModel {
 
     companion object{
 
