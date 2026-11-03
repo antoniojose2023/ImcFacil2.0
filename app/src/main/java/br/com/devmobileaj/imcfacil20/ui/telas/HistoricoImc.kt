@@ -84,7 +84,7 @@ fun HistoricoImc(navController: NavController){
                 onClick = {
                     navController.popBackStack()
                 },
-                modifier = Modifier.padding(top = 4.dp, bottom = 8.dp, end = 4.dp)
+                modifier = Modifier.padding(top = 4.dp, bottom = 8.dp, end = 24.dp)
             ) {
                 Text("Voltar")
             }

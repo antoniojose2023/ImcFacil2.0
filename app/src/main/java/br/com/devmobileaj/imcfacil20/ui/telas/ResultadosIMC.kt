@@ -44,9 +44,9 @@ fun ResultadoIMC(navController: NavController, imc: Double){
 
 
         Column(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxSize().weight(3f),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+           // verticalArrangement = Arrangement.Center
         ) {
 
             Box(
@@ -86,7 +86,6 @@ fun ResultadoIMC(navController: NavController, imc: Double){
                 )
             }
 
-
             Text(
                 classificacaoImcDica,
                 fontSize = 18.sp,
@@ -94,9 +93,6 @@ fun ResultadoIMC(navController: NavController, imc: Double){
                 color = Color.Black,
                 modifier = Modifier.padding(top = 40.dp, start = 16.dp, end = 16.dp)
             )
-
-
-
         }
 
 
@@ -109,7 +105,7 @@ fun ResultadoIMC(navController: NavController, imc: Double){
                 onClick = {
                     navController.popBackStack()
                 },
-                modifier = Modifier.width(200.dp).height(80.dp).padding(top = 32.dp),
+                modifier = Modifier.width(200.dp).height(60.dp)
 
                 ) {
                 Text(

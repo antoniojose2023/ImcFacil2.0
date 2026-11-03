@@ -1,5 +1,6 @@
 package br.com.devmobileaj.imcfacil20.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,11 +27,11 @@ fun Header(descricao: String){
             .background(Green, shape = RoundedCornerShape(bottomStart = 30.dp, bottomEnd = 30.dp)),
     ) {
 
-        Icon(
+        Image(
             painter = painterResource(R.drawable.ic_logo),
             modifier = Modifier.padding(top = 80.dp, start = 24.dp).size(40.dp),
             contentDescription = "Logo",
-            tint = Color.White
+
         )
 
         Text(

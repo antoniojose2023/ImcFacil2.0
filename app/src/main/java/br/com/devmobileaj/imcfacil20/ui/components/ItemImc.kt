@@ -1,5 +1,6 @@
 package br.com.devmobileaj.imcfacil20.ui.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,8 +44,8 @@ fun ItemImc(item: Imc, onClick: (Imc) -> Unit){
 
                 val (icon, textoImc, botao) = createRefs()
 
-                Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.ic_calcule),
+                Image(
+                    painter = painterResource(id = R.drawable.ic_item_imc),
                     contentDescription = "Logo",
                     modifier = Modifier.padding(10.dp).constrainAs(icon){
                         top.linkTo(parent.top, margin = 8.dp)
