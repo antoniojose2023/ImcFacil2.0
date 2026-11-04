@@ -13,7 +13,7 @@ Aplicativo Android nativo para calcular o **Índice de Massa Corporal (IMC)**, r
 ## 📱 Screenshots
 
 | Splash | Cálculo | Histórico | Resultado
-|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|
 | <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/e2786175-ac0c-4c18-b1ac-0dcfb90bd11d" />| <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/6fc2854c-5957-47a3-8d44-536aab9d18ba" /> | <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/b9369f43-d2ec-4015-92ff-974b7815796b" /> |  <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/267b8f68-92e1-4133-bc0f-fa60f32cc299" />  |
 
 ---
