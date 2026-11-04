@@ -12,9 +12,9 @@ Aplicativo Android nativo para calcular o **Índice de Massa Corporal (IMC)**, r
 
 ## 📱 Screenshots
 
-| Splash | Cálculo | Histórico |
+| Splash | Cálculo | Histórico | Resultado
 |:---:|:---:|:---:|
-| <img src="docs/screenshots/01-splash.png" width="240" alt="Tela de boas-vindas"> | <img src="docs/screenshots/02-calculo.png" width="240" alt="Tela de cálculo de IMC"> | <img src="docs/screenshots/03-historico.png" width="240" alt="Tela de histórico de IMC"> |
+| <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/e2786175-ac0c-4c18-b1ac-0dcfb90bd11d" />| <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/6fc2854c-5957-47a3-8d44-536aab9d18ba" /> | <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/b9369f43-d2ec-4015-92ff-974b7815796b" /> |  <img width="1280" height="2856" alt="Image" src="https://github.com/user-attachments/assets/267b8f68-92e1-4133-bc0f-fa60f32cc299" />  |
 
 ---
 
@@ -78,7 +78,7 @@ SplashScreen ──(2s)──► CalculoImc ──(Calcular)──► ResultadoI
 | Layout | ConstraintLayout Compose `1.1.2` |
 | Ícones | Material Icons (Composables) `2.2.1` |
 | Build | Android Gradle Plugin `9.4.1` · Gradle Kotlin DSL · Version Catalog |
-| Testes | JUnit 4, Espresso, Compose UI Test |
+
 
 **Configuração do projeto**
 
